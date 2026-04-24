@@ -166,15 +166,15 @@
     </style>
 </head>
 
-<body>
+<body class="h-screen flex flex-col items-center justify-center">
 
     <div id="balloon-container"></div>
 
     <main class="content-box">
         <header>
             <h1 class="text-[11px] tracking-[0.5em] txt-label mb-3 uppercase">Developer Portrait</h1>
-            <h2 class="text-2xl txt-name tracking-tight">김민준 <span class="text-gray-400 font-light text-xl">/ 1999.
-                    01.</span></h2>
+            <h2 class="text-2xl txt-name tracking-tight">김민준 <span class="text-gray-400 font-light text-xl">/
+                    ISFJ</span></h2>
         </header>
 
         <div class="divider"></div>
@@ -182,20 +182,24 @@
         <section class="space-y-6 text-[14px] tracking-wide txt-main leading-relaxed">
             <div class="space-y-1">
                 <p class="font-semibold text-slate-800 italic">"미쳐도 좋다"</p>
-                <p>대학교 9학기 초과학기, 마지막 학기와 KB부트캠프 병행 중<br>
-                    조급함보다는 단단한 기본기를 쌓고 있습니다.</p>
+                <p>대학교 9학기 초과학기와 **KB부트캠프** 병행 중.<br>
+                    치열함 속에서도 '아무것도 안 하기'의 미학을 즐깁니다. 🛌</p>
             </div>
 
             <div class="py-2">
                 <p class="text-[11px] txt-label mb-2 uppercase tracking-widest">Main Tech Stack</p>
-                <p class="txt-tech">Vue 3 • Tailwind CSS • JavaScript (ES6+)</p>
-                <p class="text-[12px] text-slate-400 mt-1">심미적인 UI와 효율적인 로직의 조화를 지향합니다.</p>
+                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 bg-sky-100 text-sky-600 rounded text-[11px] font-bold">Vue 3</span>
+                    <span class="px-2 py-0.5 bg-blue-100 text-blue-600 rounded text-[11px] font-bold">Tailwind</span>
+                    <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[11px] font-bold">Python</span>
+                </div>
+                <p class="text-[12px] text-slate-400 mt-1 italic">심미적인 UI와 효율적인 인프라의 조화를 꿈꿉니다. ☁️</p>
             </div>
 
             <div class="space-y-1">
-                <p>개발자는 영원할 수 있을까요?<br>
-                    낙오되지 않기 위해서 노력하고 있어요</p>
-                <p class="text-sky-500/70 font-medium">졸업 예정 | 신입 백엔드/데브옵스 개발자 준비 중</p>
+                <p>바삭한 치킨 한 마리면 행복해지는 **ISFJ** 🍗<br>
+                    개발자는 영원할 수 있을까요?</p><br />
+                <p class="text-sky-500/70 font-medium font-bold">졸업 예정 | 신입 백엔드 & 데브옵스 준비 중 🚀</p>
             </div>
         </section>
 
@@ -203,11 +207,12 @@
 
         <footer class="flex flex-col items-center gap-4">
             <div class="flex justify-center gap-8 text-[11px] tracking-[0.2em] txt-label uppercase">
-                <a href="https://github.com" target="_blank" class="hover:text-sky-600 transition-colors">Github</a>
-                <a href="mailto:email@example.com" class="hover:text-sky-600 transition-colors">Email</a>
-                <a href="#" class="hover:text-sky-600 transition-colors">Blog</a>
+                <a href="https://github.com" target="_blank"
+                    class="hover:text-sky-600 transition-colors font-bold">Github</a>
+                <a href="mailto:email@example.com" class="hover:text-sky-600 transition-colors font-bold">Email</a>
+                <a href="#" class="hover:text-sky-600 transition-colors font-bold">Blog</a>
             </div>
-            <p class="text-[9px] text-slate-300 tracking-tighter">본 페이지는 Vue3와 Tailwind 감성으로 제작되었습니다.</p>
+            <p class="text-[9px] text-slate-300 tracking-tighter">본 페이지는 파스텔톤 우울과 밝음 사이 어딘가에서 제작되었습니다.</p>
         </footer>
     </main>
 

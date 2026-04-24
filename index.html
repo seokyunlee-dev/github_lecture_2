@@ -1,2 +1,78 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Portfolio Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #f0f9ff;
+            overflow: hidden;
+        }
+
+        .page-fade {
+            transition: opacity 0.6s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex flex-col">
+
+    <nav
+        class="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 p-1.5 bg-white/60 backdrop-blur-md border border-white/50 rounded-full shadow-lg">
+        <button onclick="switchPage('mjmj')"
+            class="nav-btn px-6 py-2 rounded-full text-sm font-semibold transition-all bg-sky-400 text-white shadow-md"
+            data-id="mjmj">MINJUN</button>
+        <button onclick="switchPage('leeseokyun')"
+            class="nav-btn px-6 py-2 rounded-full text-sm font-semibold transition-all text-slate-500 hover:bg-white/80"
+            data-id="leeseokyun">SEOKYUN</button>
+        <button onclick="switchPage('choijihye')"
+            class="nav-btn px-6 py-2 rounded-full text-sm font-semibold transition-all text-slate-500 hover:bg-white/80"
+            data-id="choijihye">CHOIJIHYE</button>
+    </nav>
+
+    <div class="relative w-full h-full">
+        <iframe id="frame-mjmj" src="pages/mjmj.html"
+            class="page-fade absolute inset-0 w-full h-full border-none opacity-100 z-10"></iframe>
+        <iframe id="frame-leeseokyun" src="pages/leeseokyun.html"
+            class="page-fade absolute inset-0 w-full h-full border-none opacity-0 z-0"></iframe>
+        <iframe id="frame-choijihye" src="pages/choijihye.html"
+            class="page-fade absolute inset-0 w-full h-full border-none opacity-0 z-0"></iframe>
+    </div>
+
+    <script>
+        function switchPage(id) {
+            const frames = document.querySelectorAll('.page-fade');
+            const buttons = document.querySelectorAll('.nav-btn');
+
+            frames.forEach(frame => {
+                if (frame.id === `frame-${id}`) {
+                    frame.style.opacity = '1';
+                    frame.style.zIndex = '10';
+                } else {
+                    frame.style.opacity = '0';
+                    frame.style.zIndex = '0';
+                }
+            });
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-id') === id) {
+                    btn.classList.add('bg-sky-400', 'text-white', 'shadow-md');
+                    btn.classList.remove('text-slate-500');
+                } else {
+                    btn.classList.remove('bg-sky-400', 'text-white', 'shadow-md');
+                    btn.classList.add('text-slate-500');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
