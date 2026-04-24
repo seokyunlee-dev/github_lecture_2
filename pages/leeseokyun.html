@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이석윤의 프로필</title>
+    <style>
+      /* 깔끔한 폰트 적용 */
+      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+      body {
+        font-family: 'Pretendard', sans-serif;
+        background-color: #f4f1eb; /* 따뜻하고 부드러운 배경색 */
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .profile-card {
+        background-color: #ffffff;
+        width: 90%;
+        max-width: 380px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .profile-emoji {
+        font-size: 60px;
+        margin-bottom: 10px;
+      }
+
+      .name {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+        color: #2c3e50;
+      }
+
+      .age {
+        font-size: 15px;
+        color: #7f8c8d;
+        margin-top: 5px;
+        margin-bottom: 25px;
+      }
+
+      .one-liner {
+        font-size: 16px;
+        font-weight: 500;
+        color: #555;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+      }
+
+      .section {
+        text-align: left;
+        margin-bottom: 25px;
+      }
+
+      .section-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #2c3e50;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        background-color: #e3f2fd;
+        color: #1976d2;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .tmi-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tmi-list li {
+        font-size: 15px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        background-color: #fff9e6;
+        padding: 10px 15px;
+        border-radius: 10px;
+      }
+
+      .tmi-list span {
+        font-weight: 700;
+        color: #d35400;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <div class="profile-emoji">🧑🏻</div>
+      <h1 class="name">이석윤</h1>
+      <p class="age">26살 (01년생)</p>
+
+      <div class="one-liner">"열심히는 하는 사람입니다." 💪</div>
+
+      <div class="section">
+        <div class="section-title">✨ 취미 및 관심사</div>
+        <div class="tag-container">
+          <span class="tag">✈️ 여행 유튜브 시청</span>
+          <span class="tag">📱 웹툰 보기</span>
+          <span class="tag">♨️ 온천</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🔍 TMI & 좋아하는 것</div>
+        <ul class="tmi-list">
+          <li><span>MBTI:</span> INFP</li>
+          <li><span>음식:</span> 든든한 소불고기 🥩</li>
+          <li><span>모토:</span> 인생은 신형만처럼 👨‍💼</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
