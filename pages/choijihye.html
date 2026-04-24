@@ -1,28 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>팀원소개 - 최지혜</title>
-</head>
-<body>
-    <h1>👋 안녕하세요! 최지혜입니다.</h1>
-    
-    <h2>💡 나의 핵심 가치</h2>
-    <p>제가 가장 중요하게 생각하는 가치는 <span class="highlight">지속 가능성(Sustainability)</span>입니다.<br>
-    유지보수 데이터를 체계적으로 정리하여 미래의 운영 비용을 줄이고, 장기적으로 효율을 높이는 개발을 추구합니다.</p>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Quicksand:wght@400;600;700&display=swap');
 
-    <h2>💻 프로젝트 경험</h2>
-    <ul>
-        <li><strong>Job Finder</strong> 맞춤형 채용공고 자동 발송 파이프라인 (n8n) + 수시채용 웹 서비스 (Node.js) 개발</li>
-        <li><strong>스마트 온실 AI 예측 & 시각화</strong> 200만건 이상 시계열 데이터 전처리</li>
-    </ul>
+      body {
+        margin: 0;
+        padding: 0;
+        /* 싱그러운 녹색 계열 배경 */
+        background: radial-gradient(circle, #ffffff 0%, #ecfdf5 50%, #a7f3d0 100%);
+        font-family: 'Quicksand', 'Noto Sans KR', sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1e293b;
+      }
 
-    <h2>🌟 TMI & 취미</h2>
-    <ul>
-        <li>캘리그라피를 하고 있습니다.</li>
-    </ul>
+      .content-box {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 60px;
+        border-radius: 50px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        max-width: 90%;
+      }
 
-    <a href="../index.html" class="back-link">
-</body>
+      .divider {
+        width: 20px;
+        height: 2px;
+        background: #e2e8f0;
+        margin: 30px auto;
+        border-radius: 1px;
+      }
+
+      .txt-label {
+        font-weight: 600;
+        color: #64748b;
+      }
+      .txt-name {
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .txt-main {
+        font-weight: 400;
+        color: #334155;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="content-box">
+      <header>
+        <h1 class="text-[11px] tracking-[0.5em] txt-label mb-3 uppercase">Developer Portrait</h1>
+        <h2 class="text-2xl txt-name tracking-tight">
+          최지혜 <span class="text-gray-400 font-light text-xl">/ 2003.06.</span>
+        </h2>
+      </header>
+
+      <div class="divider"></div>
+
+      <section class="space-y-6 text-[14px] tracking-wide txt-main leading-relaxed">
+        <div class="space-y-1">
+          <p class="text-[12px] txt-label mb-2 uppercase tracking-widest">💡 나의 핵심 가치</p>
+          <p>
+            제가 가장 중요하게 생각하는 가치는
+            <strong class="text-emerald-600">지속 가능성(Sustainability)</strong>입니다.<br />
+            유지보수 데이터를 체계적으로 정리하여 미래의 운영 비용을 줄이고,<br />장기적으로 효율을
+            높이는 개발을 추구합니다.
+          </p>
+        </div>
+
+        <div class="py-2">
+          <p class="text-[12px] txt-label mb-3 uppercase tracking-widest">💻 프로젝트 경험</p>
+          <div class="space-y-3 text-[13.5px] text-left inline-block">
+            <p>
+              <span class="font-semibold text-slate-800">Job Finder</span><br />
+              <span class="text-slate-500 text-[12.5px]"
+                >- 맞춤형 채용공고 자동 발송 파이프라인(n8n) 및 수시채용 웹 서비스(Node.js)
+                개발</span
+              >
+            </p>
+            <p>
+              <span class="font-semibold text-slate-800">스마트 온실 AI 예측 & 시각화</span><br />
+              <span class="text-slate-500 text-[12.5px]"
+                >- 200만 건 이상의 시계열 데이터 전처리 파이프라인 구축</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-[12px] txt-label mb-1 uppercase tracking-widest">🌟 TMI & 취미</p>
+          <p class="text-slate-600 font-medium">캘리그라피를 하고 있습니다.</p>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <footer class="flex flex-col items-center gap-4">
+        <div class="flex justify-center gap-8 text-[11px] tracking-[0.2em] txt-label uppercase">
+          <a href="../index.html" class="hover:text-emerald-600 transition-colors"
+            >메인 페이지로 돌아가기</a
+          >
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>
