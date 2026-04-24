@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minjun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Quicksand:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* 가운데는 밝고 가장자리는 부드러운 블루 비네팅 */
+            background: radial-gradient(circle, #ffffff 0%, #f0f9ff 50%, #bae6fd 100%);
+            font-family: 'Quicksand', 'Noto Sans KR', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1e293b;
+            /* 글자색 강화: slate-800 */
+        }
+
+        /* 다채롭고 자연스러운 풍선 스타일 */
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 65px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.1s ease-out, opacity 0.2s;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: inset -5px -10px 15px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+            /* 입체감 */
+        }
+
+        /* 풍선 꼭지와 실 */
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -28px;
+            width: 1px;
+            height: 35px;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .balloon::before {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            width: 8px;
+            height: 6px;
+            background: inherit;
+            border-radius: 2px;
+            filter: brightness(90%);
+        }
+
+        /* 터지는 애니메이션 */
+        .pop {
+            animation: balloon-pop 0.3s forwards cubic-bezier(0.17, 0.89, 0.32, 1.49);
+            pointer-events: none;
+            /* 터지는 중 클릭 방지 */
+        }
+
+        @keyframes balloon-pop {
+            0% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.4) translateY(-10px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(0) translateY(-20px);
+                opacity: 0;
+            }
+        }
+
+        /* 바람에 날리는 자연스러운 애니메이션 */
+        @keyframes drift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(15px, -15px) rotate(3deg);
+            }
+
+            50% {
+                transform: translate(-10px, -30px) rotate(-2deg);
+            }
+
+            75% {
+                transform: translate(10px, -45px) rotate(2deg);
+            }
+
+            100% {
+                transform: translate(0, -60px) rotate(0deg);
+            }
+        }
+
+        /* 컨텐츠 박스 (중앙 모음, 글자 가독성 강화) */
+        .content-box {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            /* 불투명도 증가 */
+            padding: 60px;
+            border-radius: 50px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            pointer-events: none;
+            /* 풍선 클릭 방해 안 함 */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            max-width: 90%;
+        }
+
+        .content-box * {
+            pointer-events: auto;
+            /* 내부 글자 클릭 가능 */
+        }
+
+        .divider {
+            width: 20px;
+            height: 2px;
+            background: #e2e8f0;
+            /* slate-200 */
+            margin: 30px auto;
+            border-radius: 1px;
+        }
+
+        /* 글자 굵기 및 크기 미세 조정 (잘 보이게) */
+        .txt-label {
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        /* slate-500 */
+        .txt-name {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* slate-900 */
+        .txt-main {
+            font-weight: 400;
+            color: #334155;
+        }
+
+        /* slate-700 */
+        .txt-tech {
+            font-weight: 600;
+            color: #0284c7;
+        }
+
+        /* sky-600 */
+    </style>
+</head>
+
+<body>
+
+    <div id="balloon-container"></div>
+
+    <main class="content-box">
+        <header>
+            <h1 class="text-[11px] tracking-[0.5em] txt-label mb-3 uppercase">Developer Portrait</h1>
+            <h2 class="text-2xl txt-name tracking-tight">김민준 <span class="text-gray-400 font-light text-xl">/ 1999.
+                    01.</span></h2>
+        </header>
+
+        <div class="divider"></div>
+
+        <section class="space-y-6 text-[14px] tracking-wide txt-main leading-relaxed">
+            <div class="space-y-1">
+                <p class="font-semibold text-slate-800 italic">"미쳐도 좋다"</p>
+                <p>대학교 9학기 초과학기, 마지막 학기와 KB부트캠프 병행 중<br>
+                    조급함보다는 단단한 기본기를 쌓고 있습니다.</p>
+            </div>
+
+            <div class="py-2">
+                <p class="text-[11px] txt-label mb-2 uppercase tracking-widest">Main Tech Stack</p>
+                <p class="txt-tech">Vue 3 • Tailwind CSS • JavaScript (ES6+)</p>
+                <p class="text-[12px] text-slate-400 mt-1">심미적인 UI와 효율적인 로직의 조화를 지향합니다.</p>
+            </div>
+
+            <div class="space-y-1">
+                <p>개발자는 영원할 수 있을까요?<br>
+                    낙오되지 않기 위해서 노력하고 있어요</p>
+                <p class="text-sky-500/70 font-medium">졸업 예정 | 신입 백엔드/데브옵스 개발자 준비 중</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <footer class="flex flex-col items-center gap-4">
+            <div class="flex justify-center gap-8 text-[11px] tracking-[0.2em] txt-label uppercase">
+                <a href="https://github.com" target="_blank" class="hover:text-sky-600 transition-colors">Github</a>
+                <a href="mailto:email@example.com" class="hover:text-sky-600 transition-colors">Email</a>
+                <a href="#" class="hover:text-sky-600 transition-colors">Blog</a>
+            </div>
+            <p class="text-[9px] text-slate-300 tracking-tighter">본 페이지는 Vue3와 Tailwind 감성으로 제작되었습니다.</p>
+        </footer>
+    </main>
+
+</body>
+
+<script>
+    const container = document.getElementById('balloon-container');
+    // 다채로운 파스텔/선명한 색상 조합
+    const balloonColors = [
+        '#fecdd3', '#f9a8d4', '#d8b4fe', '#a5b4fc', '#818cf8', // Pinks, Purples, Blues
+        '#38bdf8', '#22d3ee', '#34d399', '#a3e635', '#fbbf24', // Cyans, Greens, Yellows
+        '#fb923c', '#f87171' // Oranges, Reds
+    ];
+    const balloonCount = 12; // 풍선 개수 증가
+
+    function createBalloon(initial = false) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+
+        // 무작위 위치
+        const x = Math.random() * (window.innerWidth - 60);
+        // 초기 생성은 화면 전체, 재생성은 화면 아래쪽에서
+        const y = initial ? Math.random() * (window.innerHeight - 100) : window.innerHeight + 100;
+
+        // 다채로운 색상
+        const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+        const delay = Math.random() * 10; // 애니메이션 지연시간 다양화
+        const duration = 6 + Math.random() * 4; // 애니메이션 속도 다양화
+
+        balloon.style.left = `${x}px`;
+        balloon.style.top = `${y}px`;
+        balloon.style.backgroundColor = color;
+        // 자연스러운 바람에 날리는 애니메이션
+        balloon.style.animation = `drift ${duration}s ease-in-out infinite`;
+        balloon.style.animationDelay = `-${delay}s`; // 음수 지연으로 이미 날고 있는 것처럼
+        balloon.style.opacity = 0.7 + Math.random() * 0.2; // 투명도 약간 증가
+
+        // 클릭 이벤트
+        balloon.addEventListener('mousedown', function () {
+            if (!balloon.classList.contains('pop')) {
+                balloon.classList.add('pop');
+                // 300ms 후에 제거하고 새로 생성
+                setTimeout(() => {
+                    balloon.remove();
+                    createBalloon(false); // 화면 아래에서 재생성
+                }, 300);
+            }
+        });
+
+        container.appendChild(balloon);
+    }
+
+    // 초기 풍선 생성
+    for (let i = 0; i < balloonCount; i++) {
+        createBalloon(true);
+    }
+</script>
+
+</html>
